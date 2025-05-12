@@ -61,7 +61,7 @@ def submit_form():
     # Construct the email using the Template ID
     message = Mail(
         from_email=SENDER_EMAIL,
-        to_emails=RECIPIENT_EMAIL
+        to_emails=[RECIPIENT_EMAIL] # Pass recipient email as a list
         # Subject is set in the SendGrid template itself
     )
     # Add template ID and dynamic data

@@ -15,7 +15,7 @@ body {
 }
 
 header .logo {
-    max-height: 80px; /* Adjust as needed */
+    max-height: 50px; /* Adjust as needed - reduced size */
     width: auto;
     margin-bottom: 10px;
 }

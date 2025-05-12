@@ -50,23 +50,39 @@ def submit_form():
 
 
     # Data to be passed to the SendGrid template
-    template_data = {
-        'name': name,
-        'email': email,
-        'school': school,
-        'message_body': message_body
-        # Ensure these keys match the {{variables}} in your SendGrid template
-    }
+    # template_data = {
+    #     'name': name,
+    #     'email': email,
+    #     'school': school,
+    #     'message_body': message_body
+    #     # Ensure these keys match the {{variables}} in your SendGrid template
+    # }
 
     # Construct the email using the Template ID
+    # message = Mail(
+    #     from_email=SENDER_EMAIL,
+    #     to_emails=[RECIPIENT_EMAIL] # Pass recipient email as a list
+    #     # Subject is set in the SendGrid template itself
+    # )
+    # # Add template ID and dynamic data
+    # message.template_id = SENDGRID_TEMPLATE_ID
+    # message.dynamic_template_data = template_data
+
+    # ---- TEMPORARY: Send simple email instead of template ----
+    subject = f"Simple Test from CSC App for {name}"
+    html_content = f"""
+        <h1>Simple Test Email</h1>
+        <p>This is a test to see if basic email sending works.</p>
+        <p>Name: {name}</p>
+        <p>Email: {email}</p>
+    """
     message = Mail(
         from_email=SENDER_EMAIL,
-        to_emails=[RECIPIENT_EMAIL] # Pass recipient email as a list
-        # Subject is set in the SendGrid template itself
+        to_emails=[RECIPIENT_EMAIL],
+        subject=subject,
+        html_content=html_content
     )
-    # Add template ID and dynamic data
-    message.template_id = SENDGRID_TEMPLATE_ID
-    message.dynamic_template_data = template_data
+    # ---- END TEMPORARY ----
 
     try:
         sg = SendGridAPIClient(SENDGRID_API_KEY)

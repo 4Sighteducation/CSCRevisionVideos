@@ -1,0 +1,21 @@
+Central South Consortium Revision Videos
+
+Created by VESPA Academy 2025
+
+CSC logo - https://cscjes-saff.co.uk/Images/CSC-Logo1.png
+VESPA Academy logo - https://www.vespa.academy/assets/images/full-trimmed-transparent-customcolor-1-832x947.png
+
+Description - Ten short videos that guide students through effective study and revision practices. Covering where, what, and how to revise effectively, this comprehensive series explores everything from designing the ideal study environment to selecting key topics and applying research-based revision strategies. Perfect for Key Stage 4-5 students looking to improve their exam preparation."
+
+Video 1 - Managing your Physical Environment - https://muse.ai/v/zGDx41A / <div class="muse-video-player" data-video="zGDx41A" data-width="576"></div><script src="https://muse.ai/static/js/embed-player.min.js"></script>
+Video 2 - Managing your Digital Environment - https://muse.ai/v/avfERD2 / <div class="muse-video-player" data-video="avfERD2" data-width="576"></div><script src="https://muse.ai/static/js/embed-player.min.js"></script>
+Video 3 - Will vs Skill - Strategic Study - https://muse.ai/v/gf4fhoE / <div class="muse-video-player" data-video="gf4fhoE" data-width="576"></div><script src="https://muse.ai/static/js/embed-player.min.js"></script>
+Video 4 - Sticky Timetables - Making your revision timetable stick - https://muse.ai/v/oG2PRXN / <div class="muse-video-player" data-video="oG2PRXN" data-width="576"></div><script src="https://muse.ai/static/js/embed-player.min.js"></script>
+Video 5 - 25min Sprints - Supercharge your focus - https://muse.ai/v/QFntkp8 / <div class="muse-video-player" data-video="QFntkp8" data-width="576"></div><script src="https://muse.ai/static/js/embed-player.min.js"></script>
+Video 6 - Cog P vs Cog A - Cognitively Active Revision Strategies - https://muse.ai/v/qjmbeU8
+Video 7 - High vs Low Utility - Top 3 Most Effective Revision Strategies - https://muse.ai/v/7WDUM16 / <div class="muse-video-player" data-video="7WDUM16" data-width="576"></div><script src="https://muse.ai/static/js/embed-player.min.js"></script>
+Video 8 - Test your Future Self - Setting your own revision tests - https://muse.ai/v/4vxb4Z2 / <div class="muse-video-player" data-video="4vxb4Z2" data-width="576"></div><script src="https://muse.ai/static/js/embed-player.min.js"></script>
+Video 9 - Closed Book Notetaking - The power of forgetting - https://muse.ai/v/p4ZN47c / <div class="muse-video-player" data-video="p4ZN47c" data-width="576"></div><script src="https://muse.ai/static/js/embed-player.min.js"></script>
+Video 10 - Teach your imaginary Class - Speaking your revision outloud - https://muse.ai/v/5AA3b27 / <div class="muse-video-player" data-video="5AA3b27" data-width="576"></div><script src="https://muse.ai/static/js/embed-player.min.js"></script>
+
+Other information to add - Marketing for VESPA Academy - If you would like to find out more about how the VESPA Academy portal can supercharge learner independence - contact us - email: admin@vespa.academy / website: www.vespa.academy

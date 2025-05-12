@@ -1,0 +1,51 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+header .logo {
+    max-height: 80px; /* Adjust as needed */
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.videos .card {
+    margin-bottom: 20px;
+}
+
+/* Ensure Muse player is responsive within Bootstrap cards */
+.muse-video-player {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.muse-video-player iframe,
+.muse-video-player object,
+.muse-video-player embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 20px 0;
+    border-top: 1px solid #e7e7e7;
+} 

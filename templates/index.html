@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSC Revision Videos</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="//www.gstatic.com/cast/sdk/libs/sender/1.0/cast_framework.js"></script><script src="//www.gstatic.com/eureka/clank/136/cast_sender.js"></script></head>
 <body {% if message %}data-show-success-modal="true"{% endif %}>
@@ -16,41 +20,52 @@
             <p class="lead">Powered by VESPA Academy 2025</p>
         </header>
 
-        <!-- NEW: VESPA Marketing Section -->
-        <section class="marketing-summary mb-5 p-4 bg-light rounded text-center">
-            <h2>Transform Student Success with VESPA Academy</h2>
-            <p class="lead">Go beyond academic content and develop the crucial non-cognitive skills that predict success. The VESPA Academy Coaching Portal, built on the proven VESPA framework (Vision, Effort, Systems, Practice, Attitude), empowers students in over 600 schools worldwide.</p>
-            <hr class="my-4">
-            <h5>How it Works:</h5>
-            <p>Students take a quick psychometric assessment, receive personalized reports identifying strengths/weaknesses, and engage with targeted intervention activities. Teachers gain valuable insights via a comprehensive dashboard to deliver personalized coaching, moving beyond generic advice.</p>
-            <h5>Proven Impact:</h5>
-            <p>Our approach delivers measurable results. A rigorous study showed GCSE Maths resit students using VESPA interventions improved their grades by <strong>more than double</strong> the rate of the control group. We help schools, particularly those supporting disadvantaged learners, to systematically build the organisation, revision habits, and positive attitude essential for high-stakes exams.</p>
-            <hr class="my-4">
-            <p><strong>Interested in boosting learner independence and results at your school?</strong> Click the button below to request more information.</p>
-            <!-- Button to trigger contact modal -->
-            <button type="button" class="btn btn-primary btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#contactModal">
-              Request More Information
-            </button>
-        </section>
-
-        <!-- About CSC Series -->
-        <section class="description mb-5">
-            <h2>About the Revision Series</h2>
-            <p>Ten short videos that guide students through effective study and revision practices. Covering where, what, and how to revise effectively, this comprehensive series explores everything from designing the ideal study environment to selecting key topics and applying research-based revision strategies. Perfect for Key Stage 4-5 students looking to improve their exam preparation.</p>
-        </section>
-
-        <!-- Videos Section -->
-        <section class="videos mb-5">
-            <h2>Revision Videos</h2>
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">1. Managing your Physical Environment</h5>
-                            <div class="muse-video-player" data-video="zGDx41A" data-width="100%"></div>
-                        </div>
+        <!-- NEW: Two Column Layout -->
+        <div class="row mb-5">
+            <!-- Left Column: Enhanced Marketing -->
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <section class="marketing-summary p-4 bg-light rounded border h-100">
+                    <img src="https://www.vespa.academy/assets/images/full-trimmed-transparent-customcolor-1-832x947.png" alt="VESPA Academy Logo" class="marketing-logo mb-3">
+                    <h2 class="text-center">Transform Student Success with VESPA Academy</h2>
+                    <p class="lead text-center">Go beyond academic content and develop the crucial non-cognitive skills that predict success. Built on the proven VESPA framework (Vision, Effort, Systems, Practice, Attitude).</p>
+                    <hr class="my-3">
+                    <h5><i class="bi bi-card-checklist me-2"></i>How it Works:</h5>
+                    <p>Students take a quick assessment, receive personalized reports, and engage with targeted activities. Teachers gain valuable insights via a dashboard for personalized coaching.</p>
+                    <div class="text-center my-2">
+                        <i class="bi bi-arrow-down-circle h4 text-primary"></i> <!-- Arrow Icon -->
                     </div>
-                </div>
+                    <h5><i class="bi bi-graph-up-arrow me-2"></i>Proven Impact:</h5>
+                    <p>Our approach delivers measurable results. A rigorous study showed GCSE Maths resit students using VESPA interventions improved grades by <strong>more than double</strong> the rate of the control group.</p>
+                    <hr class="my-3">
+                    <p class="text-center"><strong>Interested in boosting learner independence?</strong></p>
+                    <!-- Button to trigger contact modal -->
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#contactModal">
+                          Request More Information
+                        </button>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column: About Series & First Video -->
+            <div class="col-lg-6">
+                <section class="description mb-4 p-4 border rounded bg-white h-100">
+                     <h2><i class="bi bi-info-circle me-2"></i>About the Revision Series</h2>
+                     <p>Ten short videos guiding students through effective study practices. Covering designing study environments, selecting topics, and applying research-based strategies. Perfect for Key Stage 4-5.</p>
+                     <hr>
+                     <h5 class="card-title mt-3">Featured Video: Managing your Physical Environment</h5>
+                     <div class="muse-video-player mt-2" data-video="zGDx41A" data-width="100%"></div>
+                     <p class="text-muted small mt-2">See all 10 videos below.</p>
+                </section>
+            </div>
+        </div>
+
+        <!-- Videos Section (Remaining Videos) -->
+        <section class="videos mb-5">
+            <h2 class="mb-4">All Revision Videos</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> <!-- Changed to 3 columns on large screens -->
+                <!-- Video 1 (Already featured above) -->
+                <!-- <div class="col"> ... </div> -->
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
@@ -70,7 +85,7 @@
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">4. Sticky Timetables - Making your revision timetable stick</h5>
+                            <h5 class="card-title">4. Sticky Timetables</h5>
                             <div class="muse-video-player" data-video="oG2PRXN" data-width="100%"></div>
                         </div>
                     </div>
@@ -78,7 +93,7 @@
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">5. 25min Sprints - Supercharge your focus</h5>
+                            <h5 class="card-title">5. 25min Sprints</h5>
                             <div class="muse-video-player" data-video="QFntkp8" data-width="100%"></div>
                         </div>
                     </div>
@@ -86,7 +101,7 @@
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">6. Cog P vs Cog A - Cognitively Active Revision Strategies</h5>
+                            <h5 class="card-title">6. Cog P vs Cog A</h5>
                             <div class="muse-video-player" data-video="qjmbeU8" data-width="100%"></div>
                         </div>
                     </div>
@@ -94,7 +109,7 @@
                 <div class="col">
                      <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">7. High vs Low Utility - Top 3 Most Effective Revision Strategies</h5>
+                            <h5 class="card-title">7. High vs Low Utility</h5>
                              <div class="muse-video-player" data-video="7WDUM16" data-width="100%"></div>
                         </div>
                     </div>
@@ -102,7 +117,7 @@
                  <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">8. Test your Future Self - Setting your own revision tests</h5>
+                            <h5 class="card-title">8. Test your Future Self</h5>
                             <div class="muse-video-player" data-video="4vxb4Z2" data-width="100%"></div>
                         </div>
                     </div>
@@ -110,7 +125,7 @@
                  <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">9. Closed Book Notetaking - The power of forgetting</h5>
+                            <h5 class="card-title">9. Closed Book Notetaking</h5>
                              <div class="muse-video-player" data-video="p4ZN47c" data-width="100%"></div>
                         </div>
                     </div>
@@ -118,8 +133,17 @@
                  <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">10. Teach your imaginary Class - Speaking your revision outloud</h5>
+                            <h5 class="card-title">10. Teach your imaginary Class</h5>
                             <div class="muse-video-player" data-video="5AA3b27" data-width="100%"></div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Add back video 1 for consistent grid, or adjust logic if needed -->
+                 <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">1. Managing Physical Environment</h5>
+                            <div class="muse-video-player" data-video="zGDx41A" data-width="100%"></div>
                         </div>
                     </div>
                 </div>

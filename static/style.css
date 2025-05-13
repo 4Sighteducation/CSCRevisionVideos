@@ -3,8 +3,15 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa; /* Lighter background */
     color: #333;
+}
+
+/* Override Bootstrap variables (optional but clean) */
+:root {
+  --bs-primary: #079baa; /* Teal for primary actions */
+  --bs-primary-rgb: 7, 155, 170;
+  --vespa-dark-blue: #23356f;
 }
 
 .container {
@@ -12,6 +19,10 @@ body {
     margin: auto;
     overflow: auto;
     padding: 0 20px;
+}
+
+header h1 {
+    color: var(--vespa-dark-blue);
 }
 
 header .logo {
@@ -48,5 +59,64 @@ header .logo {
 footer {
     margin-top: 30px;
     padding: 20px 0;
-    border-top: 1px solid #e7e7e7;
+    border-top: 1px solid #dee2e6; /* Lighter border */
+    color: #6c757d; /* Muted text color */
+}
+
+/* Style for VESPA logo inside the marketing summary box */
+.marketing-summary .marketing-logo {
+    display: block; /* Prevents inline alignment issues */
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 60px; /* Adjust size as needed */
+    width: auto;
+}
+
+/* Marketing Summary Box Enhancements */
+.marketing-summary {
+    background-color: #ffffff; /* White background for contrast */
+    border-color: var(--vespa-dark-blue) !important; /* Dark blue border */
+    border-width: 2px !important;
+}
+
+.marketing-summary h2 {
+    color: var(--vespa-dark-blue);
+}
+
+.marketing-summary h5 {
+     color: var(--vespa-dark-blue);
+}
+
+.marketing-summary .bi {
+    color: var(--bs-primary); /* Teal icons */
+}
+
+/* Section headings */
+.description h2,
+.videos h2 {
+    color: var(--vespa-dark-blue);
+    border-bottom: 2px solid var(--bs-primary);
+    padding-bottom: 5px;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Card titles */
+.card-title {
+    color: var(--vespa-dark-blue);
+}
+
+/* Ensure button uses primary color override */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-primary:hover {
+    background-color: #057a8a; /* Darker teal on hover */
+    border-color: #057a8a;
+}
+
+/* Style the info box on the right column */
+.description.bg-white h2 .bi {
+    color: var(--vespa-dark-blue); /* Match heading color */
 } 

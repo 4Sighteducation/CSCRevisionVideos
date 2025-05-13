@@ -24,7 +24,7 @@ body {
 
 /* Header */
 header h1 {
-    color: var(--vespa-dark-blue);
+    color: red !important; /* AGGRESSIVE TEST */
 }
 header .logo {
     height: 40px;

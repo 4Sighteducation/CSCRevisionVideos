@@ -16,11 +16,30 @@
             <p class="lead">Powered by VESPA Academy 2025</p>
         </header>
 
+        <!-- NEW: VESPA Marketing Section -->
+        <section class="marketing-summary mb-5 p-4 bg-light rounded text-center">
+            <h2>Transform Student Success with VESPA Academy</h2>
+            <p class="lead">Go beyond academic content and develop the crucial non-cognitive skills that predict success. The VESPA Academy Coaching Portal, built on the proven VESPA framework (Vision, Effort, Systems, Practice, Attitude), empowers students in over 600 schools worldwide.</p>
+            <hr class="my-4">
+            <h5>How it Works:</h5>
+            <p>Students take a quick psychometric assessment, receive personalized reports identifying strengths/weaknesses, and engage with targeted intervention activities. Teachers gain valuable insights via a comprehensive dashboard to deliver personalized coaching, moving beyond generic advice.</p>
+            <h5>Proven Impact:</h5>
+            <p>Our approach delivers measurable results. A rigorous study showed GCSE Maths resit students using VESPA interventions improved their grades by <strong>more than double</strong> the rate of the control group. We help schools, particularly those supporting disadvantaged learners, to systematically build the organisation, revision habits, and positive attitude essential for high-stakes exams.</p>
+            <hr class="my-4">
+            <p><strong>Interested in boosting learner independence and results at your school?</strong> Click the button below to request more information.</p>
+            <!-- Button to trigger contact modal -->
+            <button type="button" class="btn btn-primary btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#contactModal">
+              Request More Information
+            </button>
+        </section>
+
+        <!-- About CSC Series -->
         <section class="description mb-5">
-            <h2>About the Series</h2>
+            <h2>About the Revision Series</h2>
             <p>Ten short videos that guide students through effective study and revision practices. Covering where, what, and how to revise effectively, this comprehensive series explores everything from designing the ideal study environment to selecting key topics and applying research-based revision strategies. Perfect for Key Stage 4-5 students looking to improve their exam preparation.</p>
         </section>
 
+        <!-- Videos Section -->
         <section class="videos mb-5">
             <h2>Revision Videos</h2>
             <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -108,17 +127,22 @@
              <script src="https://muse.ai/static/js/embed-player.min.js" async></script> <!-- Load Muse script once -->
         </section>
 
-        <section class="marketing mb-5 p-4 bg-light rounded">
-            <h2>Supercharge Learner Independence with VESPA Academy</h2>
-            <p>If you would like to find out more about how the VESPA Academy portal can supercharge learner independence, please get in touch or fill out the form below.</p>
-            <p>
-                <strong>Email:</strong> <a href="mailto:admin@vespa.academy">admin@vespa.academy</a> <br>
-                <strong>Website:</strong> <a href="https://www.vespa.academy" target="_blank">www.vespa.academy</a>
-            </p>
-        </section>
+        <footer class="text-center mt-5 mb-3 text-muted">
+            <p>&copy; 2025 VESPA Academy & Central South Consortium</p>
+        </footer>
 
-        <section class="contact-form mb-5">
-            <h2>Request More Information</h2>
+    </div>
+
+    <!-- Contact Form Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg"> <!-- Optional: modal-lg for wider modal -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contactModalLabel">Request More Information</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Form moved inside the modal body -->
             <form id="contactForm" action="/submit" method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
@@ -138,12 +162,13 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit Request</button>
             </form>
-        </section>
-
-        <footer class="text-center mt-5 mb-3 text-muted">
-            <p>&copy; 2025 VESPA Academy & Central South Consortium</p>
-        </footer>
-
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <!-- Submit button is now inside the form -->
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Success Modal -->

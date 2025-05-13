@@ -3,15 +3,16 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Lighter background */
+    background-color: #f8f9fa; /* Lighter overall background */
     color: #333;
 }
 
-/* Override Bootstrap variables (optional but clean) */
+/* VESPA Brand Colors */
 :root {
-  --bs-primary: #079baa; /* Teal for primary actions */
-  --bs-primary-rgb: 7, 155, 170;
   --vespa-dark-blue: #23356f;
+  --vespa-teal: #079baa;
+  --bs-primary: var(--vespa-teal); /* Set Bootstrap primary to our teal */
+  --bs-primary-rgb: 7, 155, 170; /* RGB for Bootstrap components */
 }
 
 .container {
@@ -21,15 +22,93 @@ body {
     padding: 0 20px;
 }
 
+/* Header */
 header h1 {
     color: var(--vespa-dark-blue);
 }
-
 header .logo {
-    height: 40px; /* Adjust as needed - Explicit height, reduced further */
-    max-height: 40px; /* Keep max-height for consistency */
+    height: 40px;
+    max-height: 40px;
     width: auto;
     margin-bottom: 10px;
+}
+
+/* Marketing Summary Box */
+.marketing-summary {
+    background-color: #ffffff; 
+    border: 2px solid var(--vespa-dark-blue);
+}
+.marketing-summary h2,
+.marketing-summary h5 {
+    color: var(--vespa-dark-blue);
+}
+.marketing-summary .marketing-logo {
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 60px; 
+    width: auto;
+}
+.marketing-summary .bi-arrow-down-circle {
+    color: var(--vespa-teal); /* Teal for the connecting arrow icon */
+}
+
+/* Other section headings */
+.description h2, /* Includes 'About the Revision Series' */
+.vespa-info-video h4, /* 'About the VESPA Academy Portal' */
+.featured-video-section h4, /* 'Today's Featured Video' */
+.videos h2 { /* 'All Revision Videos' */
+    color: var(--vespa-dark-blue);
+    border-bottom: 2px solid var(--vespa-teal);
+    padding-bottom: 8px;
+    margin-bottom: 1.5rem;
+}
+
+/* Card titles for videos */
+.card-title {
+    color: var(--vespa-dark-blue);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--vespa-teal) !important; /* Using !important to ensure override */
+    border-color: var(--vespa-teal) !important;
+    color: #ffffff !important;
+}
+.btn-primary:hover {
+    background-color: #067f8f !important; /* Slightly darker teal */
+    border-color: #067f8f !important;
+}
+
+/* Icons within headings if not already covered */
+.description h2 .bi, /* For the info icon in 'About the Revision Series' */
+.marketing-summary h5 .bi { /* For icons in marketing box subheadings */
+    color: var(--vespa-teal);
+}
+
+
+/* Responsive iframe container for embedded videos */
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 20px 0;
+    border-top: 1px solid #dee2e6;
+    color: #6c757d;
 }
 
 .videos .card {
@@ -54,13 +133,6 @@ header .logo {
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-footer {
-    margin-top: 30px;
-    padding: 20px 0;
-    border-top: 1px solid #dee2e6; /* Lighter border */
-    color: #6c757d; /* Muted text color */
 }
 
 /* Style for VESPA logo inside the marketing summary box */
@@ -91,29 +163,9 @@ footer {
     color: var(--bs-primary); /* Teal icons */
 }
 
-/* Section headings */
-.description h2,
-.videos h2 {
-    color: var(--vespa-dark-blue);
-    border-bottom: 2px solid var(--bs-primary);
-    padding-bottom: 5px;
-    margin-bottom: 1.5rem !important;
-}
-
-/* Card titles */
-.card-title {
-    color: var(--vespa-dark-blue);
-}
-
-/* Ensure button uses primary color override */
-.btn-primary {
-    background-color: var(--bs-primary) !important;
-    border-color: var(--bs-primary) !important;
-}
-
-.btn-primary:hover {
-    background-color: #057a8a; /* Darker teal on hover */
-    border-color: #057a8a;
+/* Style the info box on the right column */
+.description.bg-white h2 .bi {
+    color: var(--vespa-dark-blue); /* Match heading color */
 }
 
 /* Style the info box on the right column */

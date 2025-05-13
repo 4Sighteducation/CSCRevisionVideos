@@ -47,106 +47,48 @@
                 </section>
             </div>
 
-            <!-- Right Column: About Series & First Video -->
+            <!-- Right Column: VESPA Info Video, Daily Featured Video & About Series -->
             <div class="col-lg-6">
-                <section class="description mb-4 p-4 border rounded bg-white h-100">
+                <!-- VESPA Portal Info Video -->
+                <section class="vespa-info-video mb-4 p-4 border rounded bg-white">
+                    <h4>About the VESPA Academy Portal</h4>
+                    <div class="iframe-container mt-2">
+                        <iframe src="https://muse.ai/embed/Y9ydBfY?links=0" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </section>
+
+                <!-- Daily Featured Video -->
+                {% if featured_video %}
+                <section class="featured-video-section mb-4 p-4 border rounded bg-white">
+                    <h4>Today's Featured Revision Video</h4>
+                    <h5 class="card-title mt-2">{{ featured_video.title }}</h5>
+                    <div class="muse-video-player mt-2" data-video="{{ featured_video.id }}" data-width="100%"></div>
+                </section>
+                {% endif %}
+
+                <!-- About CSC Series -->
+                <section class="description p-4 border rounded bg-white h-100">
                      <h2><i class="bi bi-info-circle me-2"></i>About the Revision Series</h2>
                      <p>Ten short videos guiding students through effective study practices. Covering designing study environments, selecting topics, and applying research-based strategies. Perfect for Key Stage 4-5.</p>
-                     <hr>
-                     <h5 class="card-title mt-3">Featured Video: Managing your Physical Environment</h5>
-                     <div class="muse-video-player mt-2" data-video="zGDx41A" data-width="100%"></div>
-                     <p class="text-muted small mt-2">See all 10 videos below.</p>
+                     <!-- Removed featured video text & player from here -->
                 </section>
             </div>
         </div>
 
-        <!-- Videos Section (Remaining Videos) -->
+        <!-- Videos Section (All Videos) -->
         <section class="videos mb-5">
             <h2 class="mb-4">All Revision Videos</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> <!-- Changed to 3 columns on large screens -->
-                <!-- Video 1 (Already featured above) -->
-                <!-- <div class="col"> ... </div> -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                {% for video in all_videos %}
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">2. Managing your Digital Environment</h5>
-                            <div class="muse-video-player" data-video="avfERD2" data-width="100%"></div>
+                            <h5 class="card-title">{{ video.title }}</h5>
+                            <div class="muse-video-player" data-video="{{ video.id }}" data-width="100%"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">3. Will vs Skill - Strategic Study</h5>
-                            <div class="muse-video-player" data-video="gf4fhoE" data-width="100%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">4. Sticky Timetables</h5>
-                            <div class="muse-video-player" data-video="oG2PRXN" data-width="100%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">5. 25min Sprints</h5>
-                            <div class="muse-video-player" data-video="QFntkp8" data-width="100%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">6. Cog P vs Cog A</h5>
-                            <div class="muse-video-player" data-video="qjmbeU8" data-width="100%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                     <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">7. High vs Low Utility</h5>
-                             <div class="muse-video-player" data-video="7WDUM16" data-width="100%"></div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">8. Test your Future Self</h5>
-                            <div class="muse-video-player" data-video="4vxb4Z2" data-width="100%"></div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">9. Closed Book Notetaking</h5>
-                             <div class="muse-video-player" data-video="p4ZN47c" data-width="100%"></div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">10. Teach your imaginary Class</h5>
-                            <div class="muse-video-player" data-video="5AA3b27" data-width="100%"></div>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Add back video 1 for consistent grid, or adjust logic if needed -->
-                 <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">1. Managing Physical Environment</h5>
-                            <div class="muse-video-player" data-video="zGDx41A" data-width="100%"></div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
              <script src="https://muse.ai/static/js/embed-player.min.js" async></script> <!-- Load Muse script once -->
         </section>

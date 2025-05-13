@@ -3,10 +3,25 @@ from flask import Flask, request, jsonify, render_template
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 from dotenv import load_dotenv
+import datetime # Added for daily video selection
 
 load_dotenv() # Load environment variables from .env file
 
 app = Flask(__name__)
+
+# Video data (could be moved to a separate file or DB in a larger app)
+ALL_VIDEOS = [
+    {"id": "zGDx41A", "title": "1. Managing your Physical Environment"},
+    {"id": "avfERD2", "title": "2. Managing your Digital Environment"},
+    {"id": "gf4fhoE", "title": "3. Will vs Skill - Strategic Study"},
+    {"id": "oG2PRXN", "title": "4. Sticky Timetables"},
+    {"id": "QFntkp8", "title": "5. 25min Sprints"},
+    {"id": "qjmbeU8", "title": "6. Cog P vs Cog A"},
+    {"id": "7WDUM16", "title": "7. High vs Low Utility"},
+    {"id": "4vxb4Z2", "title": "8. Test your Future Self"},
+    {"id": "p4ZN47c", "title": "9. Closed Book Notetaking"},
+    {"id": "5AA3b27", "title": "10. Teach your imaginary Class"}
+]
 
 # Ensure environment variables are set
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
@@ -28,7 +43,13 @@ def index():
     # Pass message/error from submit_form result if available
     message = request.args.get('message')
     error = request.args.get('error')
-    return render_template('index.html', message=message, error=error)
+
+    # Select a daily featured video
+    day_of_year = datetime.date.today().timetuple().tm_yday
+    featured_video_index = (day_of_year - 1) % len(ALL_VIDEOS) # -1 for 0-based index
+    featured_video = ALL_VIDEOS[featured_video_index]
+
+    return render_template('index.html', message=message, error=error, featured_video=featured_video, all_videos=ALL_VIDEOS)
 
 @app.route('/submit', methods=['POST'])
 def submit_form():
@@ -89,13 +110,20 @@ def submit_form():
         response = sg.send(message)
         print(f"Email sent via SendGrid template! Status Code: {response.status_code}")
         # Redirect back to index with success message
-        return render_template('index.html', message='Thank you! Your message has been sent successfully.')
+        # Need to pass featured_video again if redirecting to index, or make it available globally
+        day_of_year = datetime.date.today().timetuple().tm_yday
+        featured_video_index = (day_of_year - 1) % len(ALL_VIDEOS)
+        featured_video = ALL_VIDEOS[featured_video_index]
+        return render_template('index.html', message='Thank you! Your message has been sent successfully.', featured_video=featured_video, all_videos=ALL_VIDEOS)
 
     except Exception as e:
         print(f"Error sending email via SendGrid template: {e}")
         # Log the error details more robustly in a real application
         # Redirect back to index with error message
-        return render_template('index.html', error='Sorry, there was an error sending your message. Please try again later.')
+        day_of_year = datetime.date.today().timetuple().tm_yday
+        featured_video_index = (day_of_year - 1) % len(ALL_VIDEOS)
+        featured_video = ALL_VIDEOS[featured_video_index]
+        return render_template('index.html', error='Sorry, there was an error sending your message. Please try again later.', featured_video=featured_video, all_videos=ALL_VIDEOS)
 
 # Example Thank You / Error routes (if redirecting)
 # @app.route('/thank-you')

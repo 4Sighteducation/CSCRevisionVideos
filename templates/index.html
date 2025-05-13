@@ -21,7 +21,7 @@
         </header>
 
         <!-- NEW: Two Column Layout -->
-        <div class="row mb-5">
+        <div class="row mb-5 align-items-stretch">
             <!-- Left Column: Enhanced Marketing -->
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <section class="marketing-summary p-4 bg-light rounded border h-100">
@@ -47,7 +47,7 @@
                 </section>
             </div>
 
-            <!-- Right Column: VESPA Info Video, Daily Featured Video & About Series -->
+            <!-- Right Column: VESPA Info Video, About Series & Daily Featured Video -->
             <div class="col-lg-6">
                 <!-- VESPA Portal Info Video -->
                 <section class="vespa-info-video mb-4 p-4 border rounded bg-white">
@@ -57,21 +57,21 @@
                     </div>
                 </section>
 
-                <!-- Daily Featured Video -->
+                <!-- About CSC Series (Moved Up) -->
+                <section class="description mb-4 p-4 border rounded bg-white">
+                     <h2><i class="bi bi-info-circle me-2"></i>About the Revision Series</h2>
+                     <p>Ten short videos guiding students through effective study practices. Covering designing study environments, selecting topics, and applying research-based strategies. Perfect for Key Stage 4-5.</p>
+                </section>
+
+                <!-- Daily Featured Video (Moved Down) -->
                 {% if featured_video %}
-                <section class="featured-video-section mb-4 p-4 border rounded bg-white">
+                <section class="featured-video-section p-4 border rounded bg-white">
                     <h4>Today's Featured Revision Video</h4>
                     <h5 class="card-title mt-2">{{ featured_video.title }}</h5>
                     <div class="muse-video-player mt-2" data-video="{{ featured_video.id }}" data-width="100%"></div>
                 </section>
                 {% endif %}
 
-                <!-- About CSC Series -->
-                <section class="description p-4 border rounded bg-white h-100">
-                     <h2><i class="bi bi-info-circle me-2"></i>About the Revision Series</h2>
-                     <p>Ten short videos guiding students through effective study practices. Covering designing study environments, selecting topics, and applying research-based strategies. Perfect for Key Stage 4-5.</p>
-                     <!-- Removed featured video text & player from here -->
-                </section>
             </div>
         </div>
 
@@ -101,14 +101,13 @@
 
     <!-- Contact Form Modal -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg"> <!-- Optional: modal-lg for wider modal -->
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="contactModalLabel">Request More Information</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <!-- Form moved inside the modal body -->
             <form id="contactForm" action="/submit" method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
@@ -131,7 +130,6 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <!-- Submit button is now inside the form -->
           </div>
         </div>
       </div>
